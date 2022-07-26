@@ -5,7 +5,6 @@
 
     <packaging>pom</packaging>
 
-
     <modules>
         <module>app-domain-model</module>
         <module>user-service</module>
@@ -13,6 +12,7 @@
         <module>task-service</module>
         <module>app-client-management</module>
         <module>discovery-service</module>
+
     </modules>
 
     <parent>
@@ -34,7 +34,9 @@
         <modelmapper.version>2.3.9</modelmapper.version>
         <lombok.version>1.18.22</lombok.version>
         <spring-cloud.version>2.2.6.RELEASE</spring-cloud.version>
+        <spring-cloud-dependencies.version>Hoxton.SR9</spring-cloud-dependencies.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <resilience4j.version>2.1.3</resilience4j.version>
     </properties>
 
     <dependencyManagement>
@@ -49,11 +51,6 @@
                 <groupId>com.cydeo</groupId>
                 <artifactId>app-client-management</artifactId>
                 <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-loadbalancer</artifactId>
-                <version>${spring-cloud.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -90,6 +87,7 @@
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
                 <version>${spring-cloud.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-eureka-server</artifactId>
@@ -97,8 +95,22 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+                <version>${spring-cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-actuator</artifactId>
                 <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-aop</artifactId>
             </dependency>
 
             <dependency>
