@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/GkhnTasks/ticketing-project-microservice-config
+          default-label: master
+          username: GkhnTasks
+          password: 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
+      fail-fast: true
