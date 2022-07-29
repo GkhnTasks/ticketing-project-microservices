@@ -10,5 +10,7 @@ spring:
           uri: https://github.com/GkhnTasks/ticketing-project-microservice-config
           default-label: master
           username: GkhnTasks
-          password: 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
+          password: '{cipher}84e4d3656516d9c04f21edaf950e854b93c47d2aae7e5b09aa4718f730d289c51359fdf9eb6ee7501a0b990f68d79220154cf27ebb66757202fe53239be2a356'
       fail-fast: true
+encrypt:
+  key: cydeo
